@@ -2,284 +2,497 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.css">
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.css">
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Development version -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Production version -->
+  <!-- <script src="https://unpkg.com/lucide@latest"></script> -->
 
 
-    <style>
-        body {
-            font-family: "IBM Plex Sans Arabic", sans-serif;
-        }
+  <style>
+    body {
+      font-family: "IBM Plex Sans Arabic", sans-serif;
+      scroll-behavior: smooth;
+      color: white;
+    }
 
-        /* Optional: glow effect for button */
-        .glow-green {
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-        }
+    /* Optional: glow effect for button */
+    .glow-green {
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+    }
 
-        .hero-grid {
-            background-image:
-                radial-gradient(circle at 50% 50%, hsl(150 43% 60% / 0.03) 0%, transparent 70%),
-                linear-gradient(hsl(222 30% 18% / 0.5) 1px, transparent 1px),
-                linear-gradient(90deg, hsl(222 30% 18% / 0.5) 1px, transparent 1px);
-            background-size: 100% 100%, 60px 60px, 60px 60px;
-        }
+    .hero-grid {
+      background-image:
+        radial-gradient(circle at 50% 50%, hsl(150 43% 60% / 0.03) 0%, transparent 70%),
+        linear-gradient(hsl(222 30% 18% / 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(222 30% 18% / 0.5) 1px, transparent 1px);
+      background-size: 100% 100%, 60px 60px, 60px 60px;
+    }
 
-        .arc-line {
-            background: radial-gradient(ellipse 80% 50% at 50% 100%, hsl(150 43% 60% / 0.08) 0%, transparent 60%);
-        }
+    .arc-line {
+      background: radial-gradient(ellipse 80% 50% at 50% 100%, hsl(150 43% 60% / 0.08) 0%, transparent 60%);
+    }
 
-        /* Animation helper classes */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+    /* Animation helper classes */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
 
-        .fade-up.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bg-card-serv:hover {
+      box-shadow: 0 0 40px -10px #6dc5994d;
+    }
+
+    .text-primary {
+      color: #6dc599;
+    }
+    .text-secondary {
+      color: #94a3b8;
+    }
+    .bg-card {
+      background-color: #131d34;
+    }
+    .border-card {
+      border-color: #273149;
+    }
+  </style>
 </head>
 
 <body class="bg-[#0f1729]">
 
-    <nav class="fixed top-0 right-0 left-0 z-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div
-                class="mt-4 flex items-center justify-between rounded-2xl border border-[#273149] bg-[#131d34cc] backdrop-blur-xl px-6 py-3">
+  <nav class="fixed top-0 right-0 left-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="mt-4 flex items-center justify-between rounded-2xl border-2 border-[#273149] bg-[#131d34cc] backdrop-blur-xl px-6 py-3">
 
-                <!-- Logo -->
-                <div class="flex items-center gap-2">
-                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6dc599]">
-                        <span class="text-xl font-black text-black">ر</span>
-                    </div>
-                    <span class="text-2xl font-bold text-white">رحيمكو</span>
-                </div>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#"
-                        class="text-sm font-medium text-[#94a3b8] hover:text-gray-900 transition-colors">الرئيسيه</a>
-                    <a href="#services"
-                        class="text-sm font-medium text-[#94a3b8] hover:text-gray-900 transition-colors">الخدمات</a>
-                    <a href="#why-us"
-                        class="text-sm font-medium text-[#94a3b8] hover:text-gray-900 transition-colors">لماذا نحن</a>
-                    <a href="#works"
-                        class="text-sm font-medium text-[#94a3b8] hover:text-gray-900 transition-colors">اعمالنا</a>
-                    <a href="#clients"
-                        class="text-sm font-medium text-[#94a3b8] hover:text-gray-900 transition-colors">عملاؤنا</a>
-                </div>
-
-                <!-- Actions -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="#contact"
-                        class="rounded-xl bg-[#6dc599] px-5 py-2.5 text-sm font-semibold text-black transition-all hover:opacity-90 glow-green">
-                        تواصل معنا
-                    </a>
-                </div>
-
-                <!-- Mobile Toggle -->
-                <button id="mobile-toggle" class="md:hidden text-gray-900">
-                    <i data-lucide="menu" class="h-6 w-6"></i>
-                </button>
-
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu"
-                class="hidden md:hidden mt-2 rounded-2xl border border-gray-300 bg-white/95 backdrop-blur-xl p-6 flex flex-col gap-4">
-                <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-900">الرئيسيه</a>
-                <a href="#services" class="text-sm font-medium text-gray-500 hover:text-gray-900">الخدمات</a>
-                <a href="#why-us" class="text-sm font-medium text-gray-500 hover:text-gray-900">لماذا نحن</a>
-                <a href="#works" class="text-sm font-medium text-gray-500 hover:text-gray-900">اعمالنا</a>
-                <a href="#clients" class="text-sm font-medium text-gray-500 hover:text-gray-900">عملاؤنا</a>
-                <a href="#contact"
-                    class="mt-2 rounded-xl bg-[#6dc599] px-5 py-2.5 text-sm font-semibold text-white text-center">
-                    تواصل معنا
-                </a>
-            </div>
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6dc599]">
+            <span class="text-xl font-black text-black">ر</span>
+          </div>
+          <span class="text-2xl font-bold text-white">رحيمكو</span>
         </div>
-    </nav>
 
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
-        <div class="absolute inset-0 arc-line pointer-events-none"></div>
-
-        <div class="relative z-10 mx-auto max-w-5xl px-4 text-center pt-32 pb-20">
-
-            <!-- CTA Chips -->
-            <a href="#" class="inline-block w-fit mx-auto mb-8">
-                <div class="w-full cursor-pointer flex items-center gap-2 p-2 z-20 px-2 rounded-3xl aos-init aos-animate"
-                style="box-shadow:0px 0px 0px 3px  rgba(54, 60, 75, 0.10);cursor:pointer;
-                background-image: linear-gradient(0deg, #27324bcf 0%, #131d34cc 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%);"
-                data-aos="fade-up" data-aos-delay="100">
-                <button class=" bg-[#6dc599] px-6 py-1 rounded-full border border-white/20">
-                    تواصل معنا
-                </button>
-                <span class="text-[#94a3b8]">
-                    ابدأ الآن
-                    معنا
-                </span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-arrow-left">
-                    <path d="m12 19-7-7 7-7"></path>
-                    <path d="M19 12H5"></path>
-                </svg>
-            </div>
-            </a>
-
-            <!-- Heading -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl !leading-[5.5rem] font-extrabold  text-white mb-8"
-                data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-                رحيمكو — بوابتك لحلول برمجية<br>
-                متكاملة ومبتكرة حيث تجد الابتكار<br>
-                <span class="text-gradient">والتميز.</span>
-            </h1>
-
-            <!-- Sub text -->
-            <p class="text-[#94a3b8] text-lg mb-12" data-aos="fade-up" data-aos-duration="600"
-                data-aos-delay="300">
-                موثوق به من قبل أكثر من 500 شركة
-            </p>
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#" class="text-sm font-medium text-secondary hover:text-white transition-colors">الرئيسيه</a>
+          <a href="#services" class="text-sm font-medium text-secondary hover:text-white transition-colors">الخدمات</a>
+          <a href="#why-us" class="text-sm font-medium text-secondary hover:text-white transition-colors">لماذا
+            نحن</a>
+          <a href="#works" class="text-sm font-medium text-secondary hover:text-white transition-colors">اعمالنا</a>
+          <a href="#clients" class="text-sm font-medium text-secondary hover:text-white transition-colors">عملاؤنا</a>
         </div>
-    </section>
+
+        <!-- Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#contact"
+            class="rounded-xl bg-[#6dc599] px-5 py-2.5 text-sm font-semibold text-black transition-all hover:opacity-90 glow-green">
+            تواصل معنا
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-toggle" class="md:hidden text-gray-900">
+          <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu"
+        class="hidden md:hidden mt-2 rounded-2xl border border-gray-300 bg-white/95 backdrop-blur-xl p-6 flex flex-col gap-4">
+        <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-900">الرئيسيه</a>
+        <a href="#services" class="text-sm font-medium text-gray-500 hover:text-gray-900">الخدمات</a>
+        <a href="#why-us" class="text-sm font-medium text-gray-500 hover:text-gray-900">لماذا نحن</a>
+        <a href="#works" class="text-sm font-medium text-gray-500 hover:text-gray-900">اعمالنا</a>
+        <a href="#clients" class="text-sm font-medium text-gray-500 hover:text-gray-900">عملاؤنا</a>
+        <a href="#contact"
+          class="mt-2 rounded-xl bg-[#6dc599] px-5 py-2.5 text-sm font-semibold text-white text-center">
+          تواصل معنا
+        </a>
+      </div>
+    </div>
+  </nav>
 
 
+  <!-- Hero Section -->
+  <section id="#" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
+    <div class="absolute inset-0 arc-line pointer-events-none"></div>
 
-    <section id="services" class="py-24 px-4 bg-background">
-  <div class="mx-auto max-w-7xl">
+    <div class="relative z-10 mx-auto max-w-5xl px-4 text-center pt-32 pb-20">
 
-    <!-- Section Header -->
-    <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
-      <span class="text-primary text-sm font-semibold mb-3 block">خدماتنا</span>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-        حلول برمجية <span class="text-gradient">متكاملة</span>
-      </h2>
-      <p class="text-muted-foreground max-w-2xl mx-auto">
-        نقدم مجموعة شاملة من الخدمات التقنية لتلبية احتياجات عملك
+      <!-- CTA Chips -->
+      <a href="#" class="inline-block w-fit mx-auto mb-8">
+        <div class="w-full cursor-pointer flex items-center gap-2 p-2 z-20 px-2 rounded-3xl aos-init aos-animate"
+          style="box-shadow:0px 0px 0px 3px  rgba(54, 60, 75, 0.10);cursor:pointer;
+                background-image: linear-gradient(0deg, #27324bcf 0%, #131d34cc 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%);" data-aos="fade-up" data-aos-delay="100">
+          <button class=" bg-[#6dc599] px-6 py-1 rounded-full border border-white/20">
+            تواصل معنا
+          </button>
+          <span class="text-secondary">
+            ابدأ الآن
+            معنا
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-left">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl !leading-[5.5rem] font-extrabold  text-white mb-8"
+        data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+        رحيمكو — بوابتك لحلول برمجية<br>
+        متكاملة ومبتكرة حيث تجد الابتكار<br>
+        <span class="text-gradient">والتميز.</span>
+      </h1>
+
+      <!-- Sub text -->
+      <p class="text-secondary text-lg mb-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+        موثوق به من قبل أكثر من 500 شركة
       </p>
     </div>
+  </section>
 
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Service Item 1 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="code" class="h-6 w-6 text-primary"></i>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">تطوير المواقع</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          نبني مواقع احترافية وسريعة بأحدث التقنيات تناسب جميع الأجهزة.
+
+
+  <section id="services" class="py-24 px-4 bg-background">
+    <div class="mx-auto max-w-7xl">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+        <span class="text-[#6dc599] text-sm font-bold mb-3 block">خدماتنا</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          حلول برمجية <span class="text-[#6dc599]">متكاملة</span>
+        </h2>
+        <p class="text-secondary max-w-2xl mx-auto">
+          نقدم مجموعة شاملة من الخدمات التقنية لتلبية احتياجات عملك
         </p>
       </div>
 
-      <!-- Service Item 2 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="smartphone" class="h-6 w-6 text-primary"></i>
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service Item 1 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="code" class="h-6 w-6 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">تطوير المواقع</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            نبني مواقع احترافية وسريعة بأحدث التقنيات تناسب جميع الأجهزة.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">تطبيقات الجوال</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          تطبيقات ذكية لنظامي iOS و Android بتجربة مستخدم مميزة.
-        </p>
+
+        <!-- Service Item 2 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="smartphone" class="h-6 w-6 text-primary"></i>
+            <div class="icon-smartphone"></div>
+
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">تطبيقات الجوال</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            تطبيقات ذكية لنظامي iOS و Android بتجربة مستخدم مميزة.
+          </p>
+        </div>
+
+        <!-- Service Item 3 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="shield" class="h-6 w-6 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">الأمن السيبراني</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            حماية شاملة لأنظمتك وبياناتك من التهديدات الرقمية.
+          </p>
+        </div>
+
+        <!-- Service Item 4 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="palette" class="h-6 w-6 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">تصميم UI/UX</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            تصاميم إبداعية تجذب العملاء وتحسن تجربة المستخدم.
+          </p>
+        </div>
+
+        <!-- Service Item 5 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="bar-chart-3" class="h-6 w-6 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">التسويق الرقمي</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            استراتيجيات تسويقية فعالة لتعزيز حضورك الرقمي.
+          </p>
+        </div>
+
+        <!-- Service Item 6 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="headphones" class="h-6 w-6 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">الدعم الفني</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            دعم فني على مدار الساعة لضمان استمرارية عملك.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <section id="services" class="py-24 px-4 bg-background">
+    <div class="mx-auto max-w-7xl">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          ليه السوق محتاج
+          <span class="text-[#6dc599]">رحيمكو</span>
+        </h2>
       </div>
 
-      <!-- Service Item 3 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="shield" class="h-6 w-6 text-primary"></i>
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 justify-center gap-6">
+        <!-- Service Item 1 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="rss" class="size-8 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">مواقع بطيئة</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            المواقع التقليدية بتخلي العميل يزهق ويقفل قبل ما يشتري.
+          </p>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">الأمن السيبراني</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          حماية شاملة لأنظمتك وبياناتك من التهديدات الرقمية.
+
+        <!-- Service Item 2 -->
+        <div
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="bot-message-square" class="size-8 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">مفيش ذكاء اصطناعي</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+            أغلب المنصات لسه شغالة بتكنولوجيا قديمة مش بتساعدك تبيع أكتر.
+          </p>
+        </div>
+
+        <!-- Service Item 3 -->
+        <div
+          class="bg-card-serv group md:col-span-2 w-full max-w-md mx-auto rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d] md:flex flex-col justify-center items-center"
+          data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
+            <i data-lucide="chart-column-increasing" class="size-8 text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">تجربة معقدة</h3>
+          <p class="text-secondary text-sm leading-relaxed">
+           العميل بيحتاج يعمل 100 خطوة عشان يشتري، وده بيضيع أوردرات.
+          </p>
+        </div>
+
+       
+
+      </div>
+    </div>
+  </section>
+
+ <section id="why-us" class="py-24 px-4 bg-background">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left Content -->
+      <div data-aos="fade-left" data-aos-duration="700">
+
+        <span class="text-primary text-sm font-semibold mb-3 block">
+          لماذا نحن
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+          لماذا تختار <span class="text-gradient">راسكودا؟</span>
+        </h2>
+
+        <p class="text-secondary mb-8 leading-relaxed">
+          نسعى دائمًا لتقديم أفضل الحلول البرمجية التي تساعدك على تحقيق أهدافك الرقمية بكفاءة عالية وجودة لا مثيل لها.
         </p>
+
+        <!-- Reasons List -->
+        <div class="space-y-4">
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="0"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">فريق محترف بخبرة تزيد عن 10 سنوات</span>
+          </div>
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="100"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">أكثر من 500 مشروع ناجح</span>
+          </div>
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="200"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">دعم فني على مدار الساعة</span>
+          </div>
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="300"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">أسعار تنافسية وجودة عالية</span>
+          </div>
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="400"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">استخدام أحدث التقنيات والأدوات</span>
+          </div>
+
+          <div class="flex items-center gap-3"
+               data-aos="fade-left"
+               data-aos-delay="500"
+               data-aos-duration="600">
+            <i data-lucide="check-circle" class="h-5 w-5 text-primary shrink-0"></i>
+            <span class="text-foreground">التزام تام بمواعيد التسليم</span>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Service Item 4 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="palette" class="h-6 w-6 text-primary"></i>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">تصميم UI/UX</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          تصاميم إبداعية تجذب العملاء وتحسن تجربة المستخدم.
-        </p>
-      </div>
+      <!-- Stats Card -->
+      <div data-aos="fade-right" data-aos-duration="700" class="relative">
 
-      <!-- Service Item 5 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="bar-chart-3" class="h-6 w-6 text-primary"></i>
-        </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">التسويق الرقمي</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          استراتيجيات تسويقية فعالة لتعزيز حضورك الرقمي.
-        </p>
-      </div>
+        <div class="rounded-3xl border border-card bg-card p-10 text-center hover:glow-green transition-all">
 
-      <!-- Service Item 6 -->
-      <div class="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:glow-green" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-          <i data-lucide="headphones" class="h-6 w-6 text-primary"></i>
+          <div class="text-6xl text-primary font-black text-gradient mb-4">
+            +500
+          </div>
+
+          <p class="text-secondary text-lg">
+            مشروع ناجح
+          </p>
+
+          <div class="mt-8 grid grid-cols-2 gap-6">
+
+            <div>
+              <div class="text-3xl font-bold text-foreground">98%</div>
+              <p class="text-sm text-secondary">رضا العملاء</p>
+            </div>
+
+            <div>
+              <div class="text-3xl font-bold text-foreground">24/7</div>
+              <p class="text-sm text-secondary">دعم فني</p>
+            </div>
+
+            <div>
+              <div class="text-3xl font-bold text-foreground">+50</div>
+              <p class="text-sm text-secondary">مطور محترف</p>
+            </div>
+
+            <div>
+              <div class="text-3xl font-bold text-foreground">+10</div>
+              <p class="text-sm text-secondary">سنوات خبرة</p>
+            </div>
+
+          </div>
         </div>
-        <h3 class="text-xl font-bold text-foreground mb-3">الدعم الفني</h3>
-        <p class="text-muted-foreground text-sm leading-relaxed">
-          دعم فني على مدار الساعة لضمان استمرارية عملك.
-        </p>
+
       </div>
 
     </div>
   </div>
 
-
 </section>
 
 
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-        });
 
-        const toggleBtn = document.getElementById('mobile-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        toggleBtn.addEventListener('click', () => {
-            const menuOpen = mobileMenu.classList.toggle('hidden');
-            const icon = toggleBtn.querySelector('i');
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    lucide.createIcons();
 
-            if (!menuOpen) {
-                icon.setAttribute('data-lucide', 'x');
-            } else {
-                icon.setAttribute('data-lucide', 'menu');
-            }
-            lucide.replace();
-        });
+    AOS.init({
+      once: true,
+    });
 
-        const fadeElements = document.querySelectorAll('.fade-up');
-        fadeElements.forEach(el => {
-            const delay = parseInt(el.dataset.delay || 0);
-            setTimeout(() => {
-                el.classList.add('show');
-            }, delay);
-        });
-    </script>
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      const menuOpen = mobileMenu.classList.toggle('hidden');
+      const icon = toggleBtn.querySelector('i');
+
+      if (!menuOpen) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.replace();
+    });
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+    fadeElements.forEach(el => {
+      const delay = parseInt(el.dataset.delay || 0);
+      setTimeout(() => {
+        el.classList.add('show');
+      }, delay);
+    });
+  </script>
 
 </body>
 
