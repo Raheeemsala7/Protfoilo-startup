@@ -84,6 +84,7 @@
       border-color: #273149;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="bg-[#0f1729]">
@@ -144,7 +145,7 @@
 
 
   <!-- Hero Section -->
-  <section id="#" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
+  <section id="#" class="relative min-h-[104vh] flex items-center justify-center overflow-hidden hero-grid">
     <div class="absolute inset-0 arc-line pointer-events-none"></div>
 
     <div class="relative z-10 mx-auto max-w-5xl px-4 text-center pt-32 pb-20">
@@ -186,6 +187,73 @@
   </section>
 
 
+  <div class="relative -mt-12 mb-8 bg-[#131d34] px-6 py-8">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper items-center">
+
+        <!-- Slide -->
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/tebzone.png" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/sadat.png" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/alishop.png" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/Nezam.webp" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy"
+            src="./assets/imgs/logos/alalmia-logo-removebg-preview.png" />
+        </div>
+
+         <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/ma3rifa.webp" />
+        </div>
+
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy"
+            src="./assets/imgs/logos/Group 1000004803.png" />
+        </div>
+
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/bestartup.png" />
+        </div>
+
+
+        <div class="swiper-slide flex justify-center">
+          <img loading="lazy" src="./assets/imgs/logos/1c96f6b5-69b6-4898-98c0-9b7d9e33d9e4.jpeg"
+            class="max-w-full w-32 h-32 object-contain" />
+        </div>
+
+
+
+
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/Khafdli.png" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/logo.jpg" />
+        </div>
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy" src="./assets/imgs/logos/logo.png" />
+        </div>
+       
+        
+
+        <div class="swiper-slide flex justify-center">
+          <img class="max-w-full w-32 h-32 object-contain" loading="lazy"
+            src="./assets/imgs/logos/Ztji1UBBbSU83jvZZkjYBQnAW9gYJTOxZluVcdOu.webp" />
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
 
   <section id="services" class="py-24 px-4 bg-background">
     <div class="mx-auto max-w-7xl">
@@ -205,7 +273,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Service Item 1 -->
         <div
-          class="bg-card-serv group rounded-2xl border-2 border-[#273149] bg-[#131d34] p-8 transition-all hover:border-[#6dc5994d]"
+          class="bg-card-serv group rounded-2xl border-2 border-[#273149]  p-8 transition-all hover:border-[#6dc5994d]"
           data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
           <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#6dc5991a]">
             <i data-lucide="code" class="h-6 w-6 text-primary"></i>
@@ -747,7 +815,8 @@
             <img alt="سرعة الموقع والتطبيق الخاص بك" loading="lazy" width="280" height="307" decoding="async"
               data-nimg="1" class="object-cover" style="color:transparent" src="./assets/imgs/secuirty.svg">
             <h2 class="text-xl font-bold px-4">اختبار الموقع من الثغرات</h2>
-            <p class="text-gray-400 px-4">نقوم بإجراء اختبارات شاملة لكشف الثغرات الأمنية في موقعك لضمان حماية بياناتك وتجربة مستخدم آمنة.</p>
+            <p class="text-gray-400 px-4">نقوم بإجراء اختبارات شاملة لكشف الثغرات الأمنية في موقعك لضمان حماية بياناتك
+              وتجربة مستخدم آمنة.</p>
           </div>
         </div>
 
@@ -759,6 +828,7 @@
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     lucide.createIcons();
 
@@ -787,6 +857,28 @@
       setTimeout(() => {
         el.classList.add('show');
       }, delay);
+    });
+
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 5,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        640: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 7,
+        },
+      },
     });
   </script>
 
